@@ -5,6 +5,7 @@
 #include <sstream>
 #include <boost/lexical_cast.hpp>
 #include "OSCSender.h"
+#include "OSCReceiver.h"
 #include <lo.h>
 
 using namespace boost;
@@ -22,9 +23,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_OSCSend_clicked();
-
     void on_pushButton_SendOSC_lo_clicked();
+
+    void on_pushButton_ReceiveOSC_clicked();
+
+    void on_pushButton_StopSuperCollider_clicked();
 
 private:
     bool isInt32_t(string s);
@@ -32,6 +35,7 @@ private:
 
     Ui::MainWindow *ui;
     OSCSender sender;
+    OSCReceiver receiver;
 
 };
 

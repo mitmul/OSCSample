@@ -12,21 +12,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         MainWindow.cpp \
-    OSCSender.cpp
+    OSCSender.cpp \
+    OSCReceiver.cpp
 
 HEADERS  += MainWindow.h \
-    OSCSender.h
+    OSCSender.h \
+    OSCReceiver.h
 
 FORMS    += MainWindow.ui
 
 mac {
-
-# oscpack
-INCLUDEPATH += /usr/local/include/oscpack \
-    /usr/local/include/oscpack/osc \
-    /usr/local/include/oscpack/ip
-LIBS += -L/usr/local/lib \
-    -loscpack
 
 # liblo
 INCLUDEPATH += /usr/local/include/lo
@@ -35,4 +30,6 @@ LIBS += -L/usr/local/lib \
 
 # boost
 INCLUDEPATH += /opt/local/include
+LIBS += -L/opt/local/lib \
+    -lboost_thread-mt
 }

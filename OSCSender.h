@@ -5,8 +5,6 @@
 #include <string>
 #include <vector>
 #include <assert.h>
-#include <UdpSocket.h>
-#include <OscOutboundPacketStream.h>
 #include <lo.h>
 #include <boost/lexical_cast.hpp>
 
@@ -94,12 +92,8 @@ public:
     void addString(const string arg);
 
     void send();
-    void send_lo();
 
 private:
-    void shutdown();
-
-    UdpTransmitSocket *socket;
     string host;
     int port;
     string addr;
